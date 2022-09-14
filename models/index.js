@@ -1,40 +1,36 @@
-// Here is where we set up our Dish model, for when we are ready to connect to a database in future activities. 
+const User = require("./User");
+const Posts = require("./Post");
+const Comments = require("./Comment");
 
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+Posts.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
 
-class Dish extends Model { }
+Posts.hasMany(Comments, {
+  foreignKey: 'post_id',
+  onDelete: 'CASCADE'
+});
 
-Dish.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    dish_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
-    guest_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    has_nuts: {
-      type: DataTypes.BOOLEAN,
-    },
-  },
-  {
-    sequelize,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'dish',
-  }
-);
+User.hasMany(Comments, {
+  foreignKey: 'user_id'
+})
 
-module.exports = Dish;
+User.hasMany(Posts, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
+Comments.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+})
+
+Comments.belongsTo(Posts, {
+  foreignKey: 'post_id',
+  onDelete: 'CASCADE'
+})
+
+module.exports = { User, Posts, Comments };
+
+//done
