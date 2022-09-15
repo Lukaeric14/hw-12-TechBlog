@@ -2,7 +2,7 @@
 
 ## Description
 
-This application is made to post blogs onto a website and allows other users 
+This application is made to post blogs onto a website and allows other users to view and comment on a blog post.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ This application is made to post blogs onto a website and allows other users
 
 ## Walkthrough
 
-Walkthrough Link: https://drive.google.com/file/d/1FK-Ogso5GQzz-eGogfSpRehsbEhr-ZJC/view?usp=sharing
+Walkthrough Link: https://drive.google.com/file/d/1mCrFf3ZK33FthGpaKX2ulo7GOMK60CVB/view?usp=sharing
 
 ## Questions
 
