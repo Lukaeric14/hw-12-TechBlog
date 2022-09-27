@@ -1,10 +1,10 @@
-const {Model, DataTypes} = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
 
-module.exports = function(req, res, next) {
-    if (!req.session.userId) {
-        res.redirect("/login");
-    } else {
-        next();
-    }
+module.exports = function (req, res, next) {
+  console.log(req.session.userId);
+  if (!req.session.userId) {
+    res.redirect("/login");
+  } else {
+    next();
+  }
 };
-
