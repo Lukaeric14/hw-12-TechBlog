@@ -1,15 +1,14 @@
-const { Post } = require('../models');
+const { Posts, Comments } = require("../models");
 
 const pst = [
-
-    {
-        title: "Test Title",
-        user_id: 1,
-        content:"This is a test"
-    }
+  {
+    title: "Test Title",
+    user_id: 1,
+    content: "This is a test",
+  },
 ];
 
-const postSeeds = () => Comment.bulkCreate(pst);
+const postSeeds = () => Posts.bulkCreate(pst);
 
 module.exports = postSeeds;
 
